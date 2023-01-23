@@ -1,0 +1,45 @@
+---
+title: "Lab1"
+author: "Alexis Munoz"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tasks
+
+## Task 1
+
+working directory is:
+
+```{r}
+getwd()
+```
+## Task 2
+
+```{r}
+ddt <- read.csv("DDT-1.csv")
+head(ddt, 6)
+```
+
+##Task something
+```{r}
+with(ddt, plot(x = WEIGHT, y = LENGTH, pch = 21, bg = "Red", main = "Nice plot"))
+```
+
+```{r}
+library(ggplot2)
+head(ddt,1)
+g <- ggplot(ddt)
+g <- g + geom_point(aes(x = WEIGHT, y = LENGTH, col = SPECIES))
+g <- g + ggtitle("My nice plot")
+g
+```
+
+
